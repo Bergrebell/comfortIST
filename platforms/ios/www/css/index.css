@@ -1,0 +1,225 @@
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #ececec;
+	margin-top: 2px;
+}
+
+#page1 {
+	width: 100%;
+	height: 480px;
+	margin: 0 auto;
+}
+
+#formScales {
+	position: relative;
+	/* otherwise the float of the child gets it out
+		 of the document flow */
+	overflow:auto;
+}
+
+#activity {
+	position: relative;
+	overflow:auto;
+	margin-top: -77px;
+}
+
+#skip {
+	postion:relative;
+	overflow: auto;
+	margin-top: 7px;
+}
+
+
+
+#noise {
+	float: left;
+	width: 31vw;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 7px;
+	background-color: rgba(255, 204, 204, 0.3);
+}
+
+#lighting {
+	float: left;
+	width: 31vw;
+	margin-left: 0px;
+	margin-right: 5px;
+	margin-bottom: 7px;
+	background-color: rgba(255, 255, 153, 0.3);
+
+}
+
+#temp {
+	float: left;
+	width: 31vw;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 7px;
+	background-color: rgba(255, 204, 153, 0.3);
+
+}
+
+
+p {
+	font-family: Verdana, arial, sans-serif;	
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.activityBtn {
+	float: left;
+	height: 31vw;
+	width: 31vw;
+	margin-left: 5px;
+}
+
+
+.active {
+	background-color: #99CCFF !important;
+	border: 1px solid #606060;
+}
+
+#submitButton {
+	float: left;
+	height: 12vw;
+	width: 310px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: transparent; 
+    background-repeat: no-repeat;  
+    background-position: 20px 10px;  
+    vertical-align: middle; 
+    /*line-height: 160px;	background-image: url(icons/photo74.png);*/
+	background-color: #77DD77;
+
+}
+
+input {
+	color: #3B444B;
+	width: 100%;
+	text-decoration: none;
+	text-align: center;
+	padding: 8px 12px;
+	margin-top: 5px;
+	font-size: 12px;
+	font-weight: 700;
+	font-family: helvetica, arial, sans-serif;
+	border-radius: 2px;
+	border: 1px solid #606060;
+	background-color: rgba(255,255,255, 0.8);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* css baseclass */
+baseActivityBox, 
+/* inherit from baseclass */
+#btn16, 
+#btn17, 
+#btn18, 
+#btn19, 
+#btn20 {
+	background-color: transparent; 
+    background-repeat: no-repeat;  
+    background-position: 20px 10px;  
+    vertical-align: middle; 
+    line-height: 160px;
+}
+
+#btn16 {
+	background-image: url(icons/man216.png);
+}
+#btn17 {
+	background-image: url(icons/work12.png);
+}
+#btn18 {
+	background-image: url(icons/businessman.png);
+	clear: left;
+}
+#btn19 {
+	background-image: url(icons/business163.png);
+}
+#btn20 {
+	background-image: url(icons/other.png);
+}
+
+#btn21 {
+	width: 30vw;
+	margin-left: 5px;
+	background-color: #ED2939;
+}
+#btn22 {
+	width: 65vw;
+	background-color: #ED2939;
+
+}
+
+/*
+baseFormScale,
+#btn1,
+#btn5,
+#btn6,
+#btn10,
+#btn11,
+#btn15 {
+	background-color: rgba(255,255,255, 0.8); 
+    background-repeat: no-repeat;  
+    background-position: 2px 4px;  
+    vertical-align: middle; 
+}*/
+
+
+/*
+#btn1 {
+	background-image: url(icons/hot.png);
+}
+
+#btn5 {
+	background-image: url(icons/cold.png);
+}
+
+#btn6 {
+	background-image: url(icons/lightOn.png);
+}
+
+#btn10 {
+	background-image: url(icons/lightOff.png);
+}
+
+#btn11 {
+	background-image: url(icons/speakerOn.png);
+}
+
+#btn15 {
+	background-image: url(icons/speakerOff.png);
+}*/
+
+/*#header {
+	overflow: hidden;
+}
+
+
+#header1 {
+		width: 31vw;
+		float:left;
+
+}
+
+#header2 {
+		width: 31vw;
+		float:left;
+
+}
+
+#header3 {
+		width: 31vw;
+		float:left;
+
+}*/
+
