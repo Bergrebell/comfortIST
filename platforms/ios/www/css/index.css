@@ -1,120 +1,124 @@
 body {
-	width: 100%;
-	height: 100%;
-	background-color: #ececec;
-	margin-top: 2px;
+    padding-top: 4px;
+    background-color: #ececec;
+    margin-top: 16px;
+    margin-left: 0px;
+    margin-right: 0px;
+
 }
 
 #page1 {
-	width: 100%;
-	height: 480px;
-	margin: 0 auto;
+    height: 480px;
+    width: 320px;
+    display: inline;
 }
 
 #formScales {
-	position: relative;
-	/* otherwise the float of the child gets it out
-		 of the document flow */
-	overflow:auto;
+    position: relative;
+    /* otherwise the float of the child gets it out
+         of the document flow */
+    overflow:auto;
 }
 
 #activity {
-	position: relative;
-	overflow:auto;
-	margin-top: -77px;
+    position: relative;
+    overflow:auto;
+    margin-top: -77px;
 }
 
 #skip {
-	postion:relative;
-	overflow: auto;
-	margin-top: 7px;
+    postion:relative;
+    overflow: auto;
+    margin-top: 7px;
 }
 
 
 
 #noise {
-	float: left;
-	width: 31vw;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 7px;
-	background-color: rgba(255, 204, 204, 0.3);
+    float: left;
+    width: 31vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 7px;
+    background-color: rgba(255, 204, 204, 0.3);
 }
 
 #lighting {
-	float: left;
-	width: 31vw;
-	margin-left: 0px;
-	margin-right: 5px;
-	margin-bottom: 7px;
-	background-color: rgba(255, 255, 153, 0.3);
+    float: left;
+    width: 31vw;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-bottom: 7px;
+    background-color: rgba(255, 255, 153, 0.3);
 
 }
 
 #temp {
-	float: left;
-	width: 31vw;
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-bottom: 7px;
-	background-color: rgba(255, 204, 153, 0.3);
+    float: left;
+    width: 31vw;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 7px;
+    background-color: rgba(255, 204, 153, 0.3);
 
 }
 
 
 p {
-	font-family: Verdana, arial, sans-serif;	
-	font-size: 10pt;
-	font-weight: bold;
-	text-align: center;
-	padding-top: 0px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+    font-family: Verdana, arial, sans-serif;    
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .activityBtn {
-	float: left;
-	height: 31vw;
-	width: 31vw;
-	margin-left: 5px;
+    float: left;
+    height: 31vw;
+    width: 31vw;
+    margin-left: 5px;
 }
 
 
 .active {
-	background-color: #99CCFF !important;
-	border: 1px solid #606060;
+    background-color: #99CCFF !important;
+    border: 1px solid #606060;
 }
 
 #submitButton {
-	float: left;
-	height: 12vw;
-	width: 310px;
-	margin-left: 5px;
-	margin-right: 5px;
-	background-color: transparent; 
+    float: left;
+    height: 12vw;
+    width: 300px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: transparent; 
     background-repeat: no-repeat;  
     background-position: 20px 10px;  
     vertical-align: middle; 
-    /*line-height: 160px;	background-image: url(icons/photo74.png);*/
-	background-color: #77DD77;
+    /*line-height: 160px;   background-image: url(icons/photo74.png);*/
+    background-color: #77DD77;
 
 }
 
 input {
-	color: #3B444B;
-	width: 100%;
-	text-decoration: none;
-	text-align: center;
-	padding: 8px 12px;
-	margin-top: 5px;
-	font-size: 12px;
-	font-weight: 700;
-	font-family: helvetica, arial, sans-serif;
-	border-radius: 2px;
-	border: 1px solid #606060;
-	background-color: rgba(255,255,255, 0.8);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    /* webkit-appearance:none to override standard button design! */
+    -webkit-appearance: none;
+    color: #3B444B;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 12px;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: helvetica, arial, sans-serif;
+    border-radius: 2px;
+    border: 1px solid #606060;
+    background-color: rgba(255,255,255, 0.8);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
 
 /* css baseclass */
@@ -125,7 +129,7 @@ baseActivityBox,
 #btn18, 
 #btn19, 
 #btn20 {
-	background-color: transparent; 
+    background-color: transparent; 
     background-repeat: no-repeat;  
     background-position: 20px 10px;  
     vertical-align: middle; 
@@ -133,31 +137,44 @@ baseActivityBox,
 }
 
 #btn16 {
-	background-image: url(icons/man216.png);
+    background-image: url(icons/man216.png);
 }
 #btn17 {
-	background-image: url(icons/work12.png);
+    background-image: url(icons/work12.png);
 }
 #btn18 {
-	background-image: url(icons/businessman.png);
-	clear: left;
+    background-image: url(icons/businessman.png);
+    clear: left;
 }
 #btn19 {
-	background-image: url(icons/business163.png);
+    background-image: url(icons/business163.png);
 }
 #btn20 {
-	background-image: url(icons/other.png);
+    background-image: url(icons/other.png);
 }
 
 #btn21 {
-	width: 30vw;
-	margin-left: 5px;
-	background-color: #ED2939;
+    width: 30vw;
+    margin-left: 5px;
+    background-color: #ED2939;
 }
 #btn22 {
-	width: 65vw;
-	background-color: #ED2939;
+    width: 65vw;
+    background-color: #ED2939;
 
+}
+
+
+
+
+.formContent{
+  position: relative;
+  z-index: 20
+}
+#activity{
+  float: left;
+  position:relative;
+  z-index:10
 }
 
 /*
