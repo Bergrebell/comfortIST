@@ -19,8 +19,8 @@ onSuccess: function () {
     //client.subscribe('/World', {qos: 1});
     
     // publish to a topic on connect
-    message = new Paho.MQTT.Message("Hello Roooooman!!!!");
-    message.destinationName = "/Test";
+    message = new Paho.MQTT.Message("New User connected");
+    message.destinationName = "/Connected";
     client.send(message);
     
 },
@@ -32,20 +32,13 @@ function initClient() {
     client.connect(options);
 }
 
-function sendTestMessage() {
-    message = new Paho.MQTT.Message("Hello Test!!!!");
-    message.destinationName = "/Test";
-    client.send(message);
-    console.log("message sent");
-}
 
-function sendTestJSON() {
+function sendJSON() {
+    console.log("sendJSON entered")
     jsonString = JSON.stringify(globalData);
     message = new Paho.MQTT.Message(jsonString);
-    message.destinationName = "/Test";
+    message.destinationName = "/Data";
     client.send(message);
-    console.log(testData);
-
 }
 
 

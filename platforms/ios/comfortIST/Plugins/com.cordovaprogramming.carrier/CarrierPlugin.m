@@ -7,6 +7,8 @@
 - (void)getAverageNoise:(CDVInvokedUrlCommand*)command
 
 {
+    // run as a background thread
+    [self.commandDelegate runInBackground:^{
     
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
@@ -43,6 +45,7 @@
     } else
       //NSLog([error description]);
         NSLog(@"An Error occured in getAverageNoise");
+    }];
 }
 
 

@@ -7,6 +7,16 @@ body {
 
 }
 
+p {
+    font-family: Verdana, arial, sans-serif;    
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 #page1 {
     height: 480px;
     width: 320px;
@@ -20,59 +30,53 @@ body {
     overflow:auto;
 }
 
+.formContent{
+  position: relative;
+  /* z-index very important to prevent overlaying divs*/
+  z-index: 20
+}
+
 #activity {
     position: relative;
     overflow:auto;
     margin-top: -77px;
+    float: left;
+    z-index:10
 }
 
 #skip {
-    postion:relative;
+    position:relative;
     overflow: auto;
     margin-top: 7px;
 }
 
-
-
-#noise {
-    float: left;
-    width: 31vw;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 7px;
-    background-color: rgba(255, 204, 204, 0.3);
-}
-
-#lighting {
-    float: left;
-    width: 31vw;
-    margin-left: 0px;
-    margin-right: 5px;
-    margin-bottom: 7px;
-    background-color: rgba(255, 255, 153, 0.3);
-
-}
-
+baseFormScales,
+#noise,
+#lighting,
 #temp {
     float: left;
     width: 31vw;
+    background-color: rgba(255, 204, 204, 0.3);
+    margin-bottom: 7px;
+}
+
+#noise {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#lighting {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+#temp {
     padding-left: 0px;
     padding-right: 0px;
-    margin-bottom: 7px;
-    background-color: rgba(255, 204, 153, 0.3);
-
 }
 
 
-p {
-    font-family: Verdana, arial, sans-serif;    
-    font-size: 10pt;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
+
 
 .activityBtn {
     float: left;
@@ -89,8 +93,8 @@ p {
 
 #submitButton {
     float: left;
-    height: 12vw;
-    width: 300px;
+    height: 50px;
+    width: 308px;
     margin-left: 5px;
     margin-right: 5px;
     background-color: transparent; 
@@ -107,6 +111,7 @@ input {
     -webkit-appearance: none;
     color: #3B444B;
     width: 100%;
+    height: 40px;
     text-decoration: none;
     text-align: center;
     padding: 8px 12px;
@@ -131,7 +136,7 @@ baseActivityBox,
 #btn20 {
     background-color: transparent; 
     background-repeat: no-repeat;  
-    background-position: 20px 10px;  
+    background-position: 16px 10px;
     vertical-align: middle; 
     line-height: 160px;
 }
@@ -166,16 +171,6 @@ baseActivityBox,
 
 
 
-
-.formContent{
-  position: relative;
-  z-index: 20
-}
-#activity{
-  float: left;
-  position:relative;
-  z-index:10
-}
 
 /*
 baseFormScale,
