@@ -168,31 +168,14 @@ $('#submitButton').click(function(){
    
     
     // *** start sensor data ***
-    function getSensors( callback) {
         getNoise();
         getLighting();
-        
-        if(globalData.hasOwnProperty('NoiseS')) {
-            console.log("if");
-            console.log(globalData);
-            callback();
-        } else {
-            console.log("else");
-            console.log(globalData);
-        }
-    }
     
     function sendData() {
         sendJSON();
     }
     // *** end sensor data ***
     
-    
-    // call function with callback
-    getSensors( function() {
-        sendData();
-    });
-
 
 
 });
