@@ -1,3 +1,22 @@
+document.addEventListener("exitButton",function(){ 
+
+    navigator.notification.confirm(
+           'Do you want to quit', 
+           onConfirmQuit, 
+           'QUIT TITLE', 
+           'OK,Cancel'  
+    );
+
+}, true);
+
+function onConfirmQuit(button){
+   if(button == "1"){
+     navigator.app.exitApp(); 
+   }
+}
+
+
+
 var wsbroker = "86.119.31.113";
 var wsport = 9001;
 var client = new Paho.MQTT.Client(wsbroker, wsport,
@@ -19,7 +38,7 @@ onSuccess: function () {
     //client.subscribe('/World', {qos: 1});
     
     // publish to a topic on connect
-    message = new Paho.MQTT.Message("New User connected");
+    message = new Paho.MQTT.Message("New User connected: " + window.localStorage.getItem('appUID'));
     message.destinationName = "/Connected";
     client.send(message);
     
@@ -39,6 +58,7 @@ function sendJSON() {
     message = new Paho.MQTT.Message(jsonString);
     message.destinationName = "/Data";
     client.send(message);
+    onConfirmQuit();
 }
 
 

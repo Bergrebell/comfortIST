@@ -1,6 +1,26 @@
 
 console.log("index.js loaded");
 
+window.addEventListener('load', function () {
+// *** start sensor data ***
+        //first value of Noisesensor is always -120.0000 and therby unusable!
+        function initNoiseSensor1(result) {
+        };
+        console.log("Initialize Noisesensor the first time with -120.0000");
+        
+        var firstNoise = carrier.getAverageNoise(initNoiseSensor1, onFailure);
+        
+        // start noise sensor
+            function onSuccessNoise1(result) {
+            };
+           carrier.getAverageNoise(onSuccessNoise1, onFailure);
+        // end noise sensor
+    // *** end sensor data ***
+}, false);
+
+
+
+
 $(document).ready(function() {
     // establish mqtt connection to server
     initClient();
@@ -108,34 +128,8 @@ $('#activity > input[type="button"]').click(function(){
 $('#submitButton').click(function(){
 	console.log("submitButton clicked");
     
-    
-    // *** start sensor data ***
-        //first value of Noisesensor is always -120.0000 and therby unusable!
-        function initNoiseSensor(result) {
-            console.log("initNoiseSensor " + result);
-        };
-        var firstNoise = carrier.getAverageNoise(initNoiseSensor, onFailure);
-        console.log("firstNoise " + firstNoise );
-        
-        // start light sensor
-            function onSuccessLight(result) {
-               addToGlobal("LightS", result);
-               console.log("LightS" + result);
-            };
-            carrier.getLuminosity(onSuccessLight, onFailure);
-        // end light sensor
-        
-        // start noise sensor
-            function onSuccessNoise(result) {
-                addToGlobal("NoiseS", result);
-            };
-           carrier.getAverageNoise(onSuccessNoise, onFailure);
-        // end noise sensor
-    // *** end sensor data ***
-    
-    
-
-	$(".active").each( function () {
+    // *** start add values of all active buttons and UID to globalData ***
+    $(".active").each( function () {
         console.log( $(this).parent().attr("id"));
 		console.log( $(this).val() );
                 
@@ -144,10 +138,63 @@ $('#submitButton').click(function(){
         
         addToGlobal(nameU, valueU);
 	});
+    
+    // adds UID to globalData
     var appUID = window.localStorage.getItem('appUID');
     addToGlobal("appID", appUID);
-    console.log(globalData);
-    sendJSON();
+    // *** end add values of all active buttons to globalData ***
+
+    
+    // *** start define sensor functions ***
+    
+        function onSuccessLight(result) {
+            addToGlobal("LightS", result);
+        };
+
+        function onSuccessNoise(result) {
+            addToGlobal("NoiseS", result);
+            sendData();
+        };
+        
+        function getNoise() {
+            carrier.getAverageNoise(onSuccessNoise, onFailure);
+        }
+        
+        function getLighting() {
+            carrier.getLuminosity(onSuccessLight, onFailure);
+        }
+    
+    // *** end define sensor functions ***
+   
+    
+    // *** start sensor data ***
+    function getSensors( callback) {
+        getNoise();
+        getLighting();
+        
+        if(globalData.hasOwnProperty('NoiseS')) {
+            console.log("if");
+            console.log(globalData);
+            callback();
+        } else {
+            console.log("else");
+            console.log(globalData);
+        }
+    }
+    
+    function sendData() {
+        sendJSON();
+    }
+    // *** end sensor data ***
+    
+    
+    // call function with callback
+    getSensors( function() {
+        sendData();
+    });
+
+
+
 });
 // *** end submit function ***
                   

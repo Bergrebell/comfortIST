@@ -19,7 +19,7 @@ onSuccess: function () {
     //client.subscribe('/World', {qos: 1});
     
     // publish to a topic on connect
-    message = new Paho.MQTT.Message("New User connected");
+    message = new Paho.MQTT.Message("New User connected: " + window.localStorage.getItem('appUID'));
     message.destinationName = "/Connected";
     client.send(message);
     
