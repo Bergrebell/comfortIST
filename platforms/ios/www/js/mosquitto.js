@@ -39,6 +39,7 @@ function sendJSON() {
     message = new Paho.MQTT.Message(jsonString);
     message.destinationName = "/Data";
     client.send(message);
+    window.location.href="question.html";
 }
 
 

@@ -153,6 +153,7 @@ $('#submitButton').click(function(){
 
         function onSuccessNoise(result) {
             addToGlobal("NoiseS", result);
+            // sending data in callback
             sendData();
         };
         
@@ -168,8 +169,8 @@ $('#submitButton').click(function(){
    
     
     // *** start sensor data ***
-        getNoise();
-        getLighting();
+    getNoise();
+    getLighting();
     
     function sendData() {
         sendJSON();
