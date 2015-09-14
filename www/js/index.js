@@ -172,9 +172,76 @@ $('#submitButton').click(function(){
     getNoise();
     getLighting();
     
+    
     function sendData() {
+        sendAppID();
+        sendActivity();
+        sendNoise();
+        sendLighting();
+        sendTemp();
+        sendNoiseS();
+        sendLightS();
         sendJSON();
     }
+    
+    
+    
+    function sendAppID() {
+    console.log("sendAppID entered")
+    appIDValue = globalData.appID;
+    message = new Paho.MQTT.Message(appIDValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/appID";
+    client.send(message);
+}
+
+function sendActivity() {
+    console.log("sendActivity entered")
+    activityValue = globalData.activity;
+    message = new Paho.MQTT.Message(activityValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/activity";
+    client.send(message);
+}
+
+function sendNoise() {
+    console.log("sendNoise entered")
+    noiseValue = globalData.noise;
+    message = new Paho.MQTT.Message(noiseValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/noise";
+    client.send(message);
+}
+
+
+function sendLighting() {
+    console.log("sendLighting entered")
+    lightingValue = globalData.lighting;
+    message = new Paho.MQTT.Message(lightingValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/lighting";
+    client.send(message);
+}
+
+function sendTemp() {
+    console.log("sendTemp entered")
+    tempValue = globalData.temp;
+    message = new Paho.MQTT.Message(tempValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/temp";
+    client.send(message);
+}
+
+function sendLightS() {
+    console.log("sendLightS entered")
+    lightSValue = globalData.LightS;
+    message = new Paho.MQTT.Message(lightSValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/lightS";
+    client.send(message);
+}
+
+function sendNoiseS() {
+    console.log("sendNoiseS entered")
+    noiseSValue = globalData.NoiseS;
+    message = new Paho.MQTT.Message(noiseSValue);
+    message.destinationName = "iphone/" + window.localStorage.getItem('appUID') + "/noiseS";
+    client.send(message);
+}
     // *** end sensor data ***
     
 
