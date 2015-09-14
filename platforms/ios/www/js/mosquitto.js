@@ -33,14 +33,14 @@ function initClient() {
 }
 
 
-function sendJSON() {
+/*function sendJSON() {
     console.log("sendJSON entered")
     jsonString = JSON.stringify(globalData);
     message = new Paho.MQTT.Message(jsonString);
     message.destinationName = "/Data";
     client.send(message);
     window.location.href="question.html";
-}
+}*/
 
 function sendAppID() {
     console.log("sendAppID entered")
